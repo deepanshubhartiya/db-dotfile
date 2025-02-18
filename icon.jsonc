@@ -1,0 +1,48 @@
+//  _                                    _    
+// (_) ___ ___  _ __    _ __   __ _  ___| | __
+// | |/ __/ _ \| '_ \  | '_ \ / _` |/ __| |/ /
+// | | (_| (_) | | | | | |_) | (_| | (__|   < 
+// |_|\___\___/|_| |_| | .__/ \__,_|\___|_|\_\
+//                     |_|                    
+{
+  "custom/blueth_logo":{
+    
+         "exec": "~/.config/waybar/scripts/blueth_logo.sh"
+  },
+        
+        
+    
+
+/*power mode button*/
+
+  "custom/wlogout": {
+    "format": "",
+    "on-click": "wlogout",
+  },
+
+
+"custom/window":{
+    "format": " ",
+    
+  },
+
+  "custom/mem":{
+
+  "format": "󰍛",
+},
+
+"custom/disk":{
+    "format": "󰋊",
+  },
+
+"image#bash": {
+      "path": "/home/db/.local/share/waybar-icon/bash.png",
+      "size": 27,
+    },
+
+
+
+    
+
+
+}

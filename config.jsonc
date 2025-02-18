@@ -1,0 +1,371 @@
+{
+  
+    "layer": "top",
+        "position": "top",
+       "height": 2,
+      "margin-top": 7,
+    "margin-bottom": 1,
+        "reload_style_on_change": true,
+
+/*load file*/
+ // Load Modules
+    "include": [
+      "~/.config/waybar/icon/icon.jsonc"       
+],
+
+
+        "modules-left": [
+              "image#arch",
+                "image#kitty",
+                "image#firefox",
+                "image#dolphin",
+                "image#spotify",
+
+              //  "hyprland/window",
+              /*  "custom/cava_mviz",*/
+               /* "custom/notification",
+                "clock",
+                "custom/pacman",
+                "tray",*/
+                //"custom/window",    
+                "hyprland/window",
+              "custom/cava_mviz"
+                
+              
+
+    ],
+
+
+        //
+     "modules-center": [  "hyprland/workspaces"  ],
+      "modules-right": [
+               //"custom/wr", 
+              //  "custom/clock-icon",
+               // "clock", 
+                // "group/expand",
+              
+              // "custom/blueth_logo",
+               "bluetooth",
+               "bluetooth#first",
+               // "clock,bluetooth",
+               //  "network#speed",
+                 
+                "clock",
+                //"custom/mem",
+                //"memory",
+                //"custom/disk",
+               // "disk",
+               "cpu",
+                "battery",
+                "battery#first",
+                "network"
+                
+                 //"battery",
+               
+               
+    ],
+
+
+"custom/cava": {
+//        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+      "exec": "~/clone/wayves/scripts/play_cava.sh", 
+    },
+
+
+  "battery#first": {
+       "format": "{capacity}%",
+        
+        "class": "battery-style1",
+        "format-charging": "{capacity} %"
+        
+      // Custom CSS class
+  },
+
+"cpu": {
+    "format": "this {usage}% {icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7}",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+},
+
+
+
+
+/*hyprland modules*/
+// Workspaces
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 4
+    }
+  },
+
+
+
+
+/*hyprland/window*/
+"hyprland/window": {
+    
+    "icon": false,
+    "icon-size": 1,
+    "format":"{}",
+    "rewrite": {
+        "":"db@archlinux",
+        "(.*) — Mozilla Firefox": "Mozilla Firefox"
+    
+        /*any more*/
+    },
+    "separate-outputs": true
+},
+
+
+//this is network speed test 
+  "network#speed": {
+"interval": 1,
+"format": "{ifname}",
+"format-wifi": " {icon}   {bandwidthDownBytes}  {bandwidthUpBytes} ",
+"format-ethernet": " {icon} {bandwidthDownBytes}  {bandwidthUpBytes} ",
+"format-disconnected": "󰌙",
+"tooltip-format": "{ipaddr}",
+"format-linked": "󰈁 {ifname} (No IP)",
+"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+"tooltip-format-ethernet": "{ifname} 󰌘",
+"tooltip-format-disconnected": "󰌙 Disconnected",
+"max-length": 30,
+"format-icons": ["󰤯","󰤟","󰤢","󰤥"," 󰤨"]
+},
+
+
+ 
+"image#kitty": {
+	"path": "/home/db/.local/share/waybar-icon/kitty.png",
+	"size": 27,
+  "on-click": "kitty",
+  "tooltip": "kitty",
+  "tooltip-format": "kitty",
+	
+},
+
+"image#spotify": {
+	"path": "/home/db/.local/share/waybar-icon/pngegg(1).png",
+	"size": 27,
+        "on-click": "spotify",
+        
+	
+},
+// //
+"image#firefox": {
+	"path": "/home/db/.local/share/waybar-icon/Firefox_logo,_2017.png",
+	"size": 20,
+        "on-click": "firefox",
+	
+},
+    
+"image#dolphin": {
+	"path": "/home/db/.local/share/waybar-icon/pngegg.png",
+	"size": 25,
+        "on-click": "dolphin",
+	
+},
+
+
+ 
+
+  // This is a custom cava visualizer
+"custom/cava_mviz": {
+	"exec": "$HOME/.config/waybar/scripts/cava.sh",
+	"format": "{}"
+},
+
+// this is memory and disk combo
+"memory": {
+    "format": "{}%",
+    },
+
+
+    /*starting modules-right */
+
+    "custom/wr":{
+        "format": "󱍷 ",
+        "on-click": "~/.config/waybar/scripts/refresh.sh",
+        "tooltip-format": "thisis waybar reload",  
+    },
+
+
+
+      
+        "custom/notification": {
+            "tooltip": false,
+            "format": "",
+            "on-click": "swaync-client -t -sw",
+            "escape": true
+        },
+
+//for clock icon add 
+    "custom/clock-icon":
+    {
+        "format": "",
+        
+        
+    },
+
+      "clock": { 
+            "format": "{:%I:%M:%S%p} ",
+              "format-alt": "{:%A, %d %B %Y }",
+            
+        "class": "alt-format",
+            "interval": 1,   
+            "tooltip-format": "<tt>{calendar}</tt>",
+            "calendar": {
+                "format": { 
+                    "today": "<span color='#fAfBfC'><b>{}</b></span>"
+                }
+            },
+            "actions": {
+                "on-click-right": "shift_down",
+                "on-click": "shift_up"
+            }
+        },
+  
+
+
+// this is network
+
+// Define Network
+
+    	"network": {
+    "format-alt": "<span foreground= '#d9dad7' size='14000'>{icon}</span><span foreground='#181C14' >{essid}</span>",
+        "format-icons": ["󰤯 ","󰤟","󰤢 ","󰤥 ","󰤨 "], 
+        	"tooltip": true,
+        	"rotate": 0,
+        	"format-ethernet": "this",
+        	"tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>",
+        	"format-linked": "{ifname} (No IP)",
+        	"format-disconnected": "󰖪 ",
+        	"tooltip-format-disconnected": "Disconnected",
+        	"format-wifi": "<span foreground='#FFC000'  size='13432'>󰁊 </span><span foreground='#FFC000' >{bandwidthDownBytes}</span> <span foreground='#ffa96a'size='13432'>󰁢</span> <span foreground='#ffa96a'>{bandwidthUpBits}</span>",
+
+        	"interval": 2
+    	},
+
+
+
+
+
+        "bluetooth": {
+            "format-on":"",
+             "margin": "100",   
+            "format-off": "",
+            "format-disabled": "OFF ",
+            "format-connected-battery": "<span foreground='#000000' size='15432'></span>",
+            
+            
+
+
+            "format-alt": "<span foreground='#fdac53' size='15432'> </span>{device_alias}",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click-right": "this is ",
+        },
+
+        //this  is second modules for icon
+        "bluetooth#first":{
+         "format-connected-battery":"{device_battery_percentage}%",
+         // format alt
+       "format-alt": "{device_alias}",
+        "format-on": "",
+ 
+
+},
+
+
+       
+        "battery": {
+            "interval":1,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "<span foreground='#DADD98' size='16932'>{icon}</span>",
+            "format-charging": "<span size='13432' foreground='#f8f398'></span>",
+            "format-plugged": "{capacity}% 󰂄 ",
+            "format-alt": "{time} {icon}",
+            "format-icons": [
+                "",
+            "",
+            "",
+            "",
+            "",
+            ""
+            ],
+        },
+
+
+    
+        "custom/pacman": {
+            "format": "󰅢 {}",
+            "interval": 600,   
+            "exec": "checkupdates | wc -l",
+            "exec-if": "exit 0",
+            "on-click": "kitty sh -c 'yay; sudo pacman -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+            "signal": 8,
+            "tooltip": false,
+        },
+        "custom/expand": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/endpoint":{
+            "format": "|",
+            "tooltip": false
+        },
+        "group/expand": {
+            "orientation": "horizontal",
+            "drawer": {
+                "transition-duration": 600,
+                "transition-to-left": true,
+                "click-to-reveal": true
+            },
+            "modules": ["custom/expand", "custom/colorpicker","temperature","custom/endpoint"],
+        },
+        "custom/colorpicker": {
+            "format": "{}",
+            "return-type": "json",
+            "interval": "once",
+            "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+            "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+            "signal": 1
+}, 
+
+"image#arch": {
+
+
+        "path": "/home/db/.local/share/waybar-icon/386451_arch linux_archlinux_icon(1).png",
+	"size": 27,
+        "on-click": "~/.config/hypr/scripts/rofi.sh",
+	
+},
+       
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "",
+        },
+        "tray": {
+            "icon-size": 14,
+            "spacing": 10
+        },
+},
+
+
+

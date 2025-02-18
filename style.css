@@ -1,0 +1,573 @@
+@import url('/home/db/.cache/wal/colors-waybar.css');
+
+* {
+    /* font-size:15px; */
+    background: transparent;
+       min-height: 0px;
+  
+   
+    /* font-family: "ProggyClean CE Nerd Font"; */
+}
+window#waybar{
+    all:unset;
+}
+
+/*workspace*/
+#workspaces {
+    background: @color15;
+    margin-top: 0px;
+  padding: 5 5px 5 5;
+ border-radius: 15px;
+  font-family: "JetBrainsMono Nerd Font";
+  margin-bottom: 8px;
+
+
+}
+
+
+
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 0px 3px;
+    border-radius: 16px;
+    color: #000000;
+    min-height: 1px;
+    background-color: @color3;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    color: #2f354a;
+     border: 0.7px solid @background;
+    background-color: @color12;
+    border-radius: 15px;
+    min-height: 1px;
+    min-width: 50px; 
+    background-size: 1%;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: #cdd6f4;
+    color: #cdd6f4;
+    border-radius: 16px;
+  min-width: 50px;
+  background-size: 400% 400%;
+}
+
+
+
+
+/* #custom-linux{ */
+/*     color: red; */
+/*     font-size: 50px; */
+/* } */
+
+#image.firefox:hover,#image.spotify:hover,#image.kitty:hover,#image.dolphin:hover{
+    color: blue;
+    
+    transition: all 0.1s ease-in-out;
+    
+    padding-top: 6;
+    
+    }
+
+#custom-linux{
+    font-size: 30px;
+    padding: 1px 1 2 8;
+    
+    background-color: #ffffff;
+    color: black;
+    
+}
+
+
+
+/* now start waybar config */
+
+
+#custom-launcher{
+        
+        padding: 0;
+        font-size: 100px;
+        background-image: url('/home/db/Downloads/kitty.png');
+        background-position: center;
+              
+        background-size: 100px;
+}
+
+/* module left*/
+
+#image.arch{
+    color: blue;
+   margin-bottom: 7px; 
+    margin-left:7px;
+    padding: 3px;  
+    font-size: 22;
+    border-radius: 100px;
+    /* background: rgba(188,188,188,.5) */
+    background: @color0;
+     border: 0.5px solid @color12;
+}
+
+
+/*start now */
+#image.kitty{
+margin: 0 0 0 8px;
+margin-bottom: 7px;
+font-size: 100px;
+color: #ffffff;
+padding: 0px 0px 0px 5px;
+border-radius: 50px 0 0 50px; 
+
+background: alpha(@color1,1) ;
+/*boreder*/
+ border-left: 0.5px solid @color0;
+ border-top: 0.5px solid @color0;
+ border-bottom: 0.5px solid @color0;
+
+
+    /*text-shadow*/
+
+}
+
+#image.firefox{
+    font-size: 1px;
+    margin: 0 0 7 0;
+    padding-left: 2px;
+    padding-right: 2px;
+    background: @color1;
+    border-radius : 0px;
+
+    /*boreder*/
+ 
+ border-top: 0.5px solid @color0;
+ border-bottom: 0.5px solid @color0;
+
+}
+
+
+#image.dolphin{
+    font-size: 19px;
+    color: #81D8D0;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: @color1;
+    margin: 0 0 7 0;
+    border-radius: 0 0px 0px 0;
+    /*boreder*/
+ 
+ border-top: 0.5px solid @color0;
+ border-bottom: 0.5px solid @color0;
+}
+
+/*spotify */
+#image.spotify{
+    font-size: 1px;
+    margin: 0 0 7 0;
+    padding-left: 0 ;
+    padding-right: 4px;
+    background: @color1;
+    border-radius : 0px 50px 50px 0 ;
+    /*boreder*/
+ border-right: 0.5px solid @color0;
+ border-top: 0.5px solid @color0;
+ border-bottom: 0.5px solid @color0;
+ 
+
+}
+
+
+/*cava */
+#custom-cava_mviz{
+    color: @color14;
+    margin: 0 3px 9 9px;
+    font-size: 13px;
+    /* background: alpha(@background, .4); */
+    border-radius: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+  background: alpha(@color4,.0);
+    
+ font-family: " JetBrainsMono Nerd Font";
+  border-bottom: 3px solid @color9;
+   
+
+
+}
+
+
+/*this is hover */
+/* image.spotify:hover,image.arch:hover,image.firefox:hover{ */
+/**/
+/* } */
+/**/
+
+/*this is logo */
+#custom-window{
+  margin-left: 10px;
+   color:black;
+    margin-top: 7px;
+    padding-left: 8px;
+  border-radius:  100px 0  0 100px;
+  background: @color15;
+  
+  
+  font-size: 23px;
+}
+
+
+
+/* top center*/
+#window{
+    border: 0.8px solid @color0; 
+    font-size: 100px;
+    margin-bottom: 8px; 
+    color:  red;
+    border-radius: 0 50px 50px  0px;
+    padding-right: 7px;
+    padding-left: 0px;
+       background: alpha(@background,.5);
+
+}
+
+
+
+/*now to start right module*/
+
+/*clock*/
+
+#clock{
+    margin-top: 0px;
+    font-family: "Orbitron";
+    margin-right: 1px;
+    border-radius: 50px;
+    font-size: 16px;
+    padding-left: 9px;
+    padding-right: 5px;
+
+    background: alpha(@color15,.9);
+
+    /*boreder*/
+border: 0.5px solid @color12; 
+
+}
+
+
+#custom-clock-icon{
+    padding-right: 12px;
+    padding-left: 8px;
+    font-size: 18px;
+    
+    margin-bottom: 5px; 
+    color:  #FAFAD2;
+    border-radius: 50px 0 0 50px;
+    background: alpha(@background, .4);
+
+    /*boreder*/
+ /*boreder*/
+ 
+ border-left: 0.5px solid @color12;
+ border-top: 0.5px solid @color12;
+ border-bottom: 0.5px solid @color12;
+}
+
+
+
+
+tooltip-format {
+     background: alpha(red,0.5); 
+    color: red;
+    
+    margin-top: 50px;
+    border-radius: 22px;
+}
+#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+    transition: all 0.1s ease;
+/*    padding-left: 50px;*/
+    /* color:@color9; */
+    color: red;
+}
+#custom-notification {
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+}
+#clock{
+    /* padding: ; */
+    color:  #323643;
+    transition: all .3s ease;
+    margin-bottom: 9px;
+    margin-right: 1px;
+
+}
+
+/*this is color alt config*/
+#clock.alt-format{
+  background-color: red;
+}
+
+#clock.alt-format {
+background-color: red;
+  color: green;
+
+}
+
+
+#custom-pacman{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+
+}
+
+
+#waybar.bluetooth {
+    font-size: 100px; /* Adjust the size as needed */
+}
+
+
+/*bluetooth */
+#custom-icon{
+  margin-top: 7;
+  padding-right: 0;
+  padding-left: 5px;
+  border-radius: 50px 0 0px 50;
+  background: alpha(@background, .5);
+  font-size: 20px;
+} 
+/*this is bluetooth config*/
+#custom-blueth_logo{
+  font-size: 22px;
+  border-radius: 50px 0 0 50px;
+  padding-left: 8px;
+  color: #e9897e;
+  margin-top: 0px;
+  background: alpha(@background, .5);
+}
+
+
+#bluetooth{
+    background: @color6;
+    margin-top: 0px;
+     
+    font-size: 14.94px;
+    padding-left: 10px;
+    padding-bottom: 1px;
+    padding-right: 11;
+    border-radius: 50 0 0 50;
+    transition: all .3s ease;
+ /*   color: #FDAC53;*/
+  color: #98b4d4;
+ font-family: " JetBrainsMono Nerd Font";
+  margin-bottom: 9px;
+
+    /*boreder*/
+border-left: 0.5px solid @color0; 
+ border-top: 0.5px solid @color0;
+ border-bottom: 0.5px solid @color0;
+}
+
+
+
+
+
+#battery{
+    padding-left: 9px;
+    padding-right: 11;
+    transition: all .3s ease;
+    color:@color7;
+      border-right-style:solid ;  
+    margin-bottom: 9px; 
+    border-radius: 50 0 0 50px;
+    background: alpha(@color13, .9);
+  
+    font-family:"Orbitron";
+   border-top: 0.5px solid @color0;
+  border-left: 0.5px solid @color0;
+  border-bottom: 0.5px solid @color0;
+
+    /*text-shadow text-shadow*/
+  text-shadow: 1px 1px 1px black;
+
+}
+#battery.charging {
+    color: #26A65B;
+    font-size: 15px;
+    padding-right: 10px;
+   border-radius: 50 0 0 50;
+   border-right: 0.5px solid @color0;
+   margin-right: -8px;
+    font-family: "Orbitron";
+
+    /*text-shadow*/
+  text-shadow: 1px 1px 1px  black;
+
+
+}
+
+#battery.warning:not(.charging) {
+    color: #ffbe61;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network{
+    color: #ffffff;
+    font-size: 14px;
+     
+    padding-left: 8px;
+    padding-bottom: 0px;
+    padding-right: 7px;
+    margin: 0 20px 0 0px;
+    border-radius: 100px;
+    border: 0.5px solid @color0;
+    background: @color12;
+    transition: all 10s ease-in-out;
+    font-family: "JetBrainsMono Nerd Font";
+
+}
+
+
+bluetooth.blue123{
+  background-color: red;
+}
+
+#custom-wlogout{
+  background: alpha(@background,.5);
+  padding-left: 8px;
+  color: #ff6464;
+font-size: 17px;
+ border-radius: 7px;
+ padding-right:  11px;
+  margin: 7px 15px 0 0;
+}
+
+/* add memory icon */
+#custom-mem{
+background: alpha(@background,.4);
+
+border-radius: 50px 0 0 50px;
+padding-left: 9px;
+padding-right: 8px;
+font-size: 22px;
+margin-bottom: 5px;
+color: #f6e198;  
+  font-family: " JetBrainsMono Nerd Font";
+  /*boreder*/
+ border-left: 0.5px solid @color12;
+ border-top: 0.5px solid @color12;
+ border-bottom: 0.5px solid @color12;
+}
+
+#memory{
+  background: alpha(@background,.4);
+  
+  font-size: 14.94px;
+  padding-left: 0px;
+  border-radius: 0;
+  margin-bottom: 5px;
+ font-family: " JetBrainsMono Nerd Font";
+    /*boreder*/
+ 
+ border-top: 0.5px solid @color12;
+ border-bottom: 0.5px solid @color12;
+}
+
+/* add memory icon and config*/
+#custom-disk{
+background: alpha(@background,.4);
+margin-top: 0px;
+color: #bad8b6;
+padding-right: 8px;
+padding-left: 5px;
+font-size: 19px;
+    margin-bottom: 5px;
+ font-family: " JetBrainsMono Nerd Font";
+
+   /*boreder*/
+ 
+ border-top: 0.5px solid @color12;
+ border-bottom: 0.5px solid @color12; 
+}
+
+#disk{
+  background: alpha(@background,.4);
+  
+  border-radius: 0 50px 50px 0;
+  color: #bcdbdf;
+  margin-bottom: 5px;
+  padding-right: 8px;
+ margin-right: 5px; 
+    font-family: " JetBrainsMono Nerd Font";
+    /*boreder*/
+ 
+ border-top: 0.5px solid @color12;
+ border-bottom: 0.5px solid @color12;
+}
+
+/* this is  test hyprland/window module*/
+#window{
+  color: black;
+  background-color: @color15;
+  font-size: 15.3;
+  margin-left: 9;
+  padding-left: 6;
+  border-radius: 15px;
+  font-family: "Fira Sans,Fira Sans SemiBold";
+ 
+}
+
+#network{
+  margin-bottom: 9px;
+  margin-right: 30;
+  
+}
+
+
+#battery.first{
+ margin-bottom: 9px;
+border-left: 0px solid red;
+border-right: 0.5px solid @color0;
+    font-family: "Orbitron";
+    font-size: 13px;
+  background: alpha(@color13,.9);
+  border-radius: 0 50 50 0;
+  padding-right: 4px;
+  padding-left: 5px;
+  margin-right: 7px;
+  color: @color0;
+
+ text-shadow: none;   /*text-shadow*/
+}
+
+
+
+
+#bluetooth.first{
+  background: red;
+  border-radius: 0 50 50 0;
+  margin-bottom: 9px;
+  padding-left: 0px;
+  margin-right: 8px;
+  background: @color6;
+  color: @color0;
+    font-family: "Orbitron";
+    font-size: 13;
+    /*boreder*/
+border-left: 0 ;
+ border-right: 0.5px solid @color0;
+ border-top: 0.5px solid @color0;
+ border-bottom: 0.5px solid @color0;
+}
+
+
+
